@@ -265,12 +265,14 @@ void aseb_sites(string input1, string input2, string input3, string output, int 
 void aseb_protein(string input1, string input2, string input3, string output, int Permuationtimes){
   ofstream tmpOut((output+".tmp").c_str());
   if(!tmpOut){
-     cerr<<"Can not open "<<(output+".tmp")<<endl;
+     //cerr<<"Can not open "<<(output+".tmp")<<endl;
+     PRINTFUNCTION("Can not open %s \n", (output+".tmp").c_str());
      return;
   }
   ifstream in3(input3.c_str());
   if(!in3){
-     cerr<<"Can not open "<<input3<<endl;
+     //cerr<<"Can not open "<<input3<<endl;
+     PRINTFUNCTION("Can not open %s \n", (input3).c_str());
      return;
   }
   char buffer[1000000 + 1];
@@ -521,9 +523,10 @@ void print_blosum62(){
 int get_score_seqs(string & str1, string & str2){
     int score = 0;
     if(str1.size() != str2.size()){
-       cerr<<str1<<endl;
-       cerr<<str2<<endl;
-       cerr<<"Different length"<<endl;
+       //cerr<<str1<<endl;
+       //cerr<<str2<<endl;
+       //cerr<<"Different length"<<endl;
+       PRINTFUNCTION("Different length!\n");
        return -1;
     }
     for(int i=0; i < (int)str1.size(); i++){
@@ -538,10 +541,11 @@ int get_score_seqs(string & str1, string & str2){
         }
         sprintf(tmp, "%c_%c", chr1, chr2);
         if(pair2score.count(tmp)==0){
-           cerr<<tmp<<endl;
-           cerr<<str1<<endl;
-           cerr<<str2<<endl;
-           cerr<<"Contains unrecognizable character"<<endl;
+           //cerr<<tmp<<endl;
+           //cerr<<str1<<endl;
+           //cerr<<str2<<endl;
+           //cerr<<"Contains unrecognizable character"<<endl;
+           PRINTFUNCTION("Contains unrecognizable character\n");
            return -1;
         }
         score += pair2score[tmp];
