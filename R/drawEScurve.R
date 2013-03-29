@@ -63,9 +63,9 @@ function(curveInfoDataFrame, sites=NULL, max_p_value=0.1, min_es=0.2, outputDir=
              next
           }
           if(j <= max_y_index+1){
-             lines(c(indexes[j],indexes[j]),c(0.8,0.95),col=rgb(0,0,200,max = 255))
+             lines(c(indexes[j],indexes[j]),c(0.8,0.95),col=rgb(0,0,200,maxColorValue = 255))
           }else{
-             lines(c(indexes[j],indexes[j]),c(0.8,0.95),col=rgb(160,160,255,max = 255))
+             lines(c(indexes[j],indexes[j]),c(0.8,0.95),col=rgb(160,160,255,maxColorValue = 255))
           }
       }
       if(figKind == "pdf"){

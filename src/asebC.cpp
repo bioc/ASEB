@@ -49,8 +49,11 @@ int scores[576] = {4,-1,-2,-2,0,-1,-1,0,-2,-1,-1,-1,-1,-2,-1,1,0,-3,-2,0,-2,-1,0
 char acids[24] = {'A','R','N','D','C','Q','E','G','H','I','L','K','M','F','P','S','T','W','Y','V','B','Z','X','-'};
 
 map<string, int> pair2score;
+#ifdef INDEP_PROGRAM
 void print_blosum62();
 void random_check_blosum62();
+#else
+#endif
 int get_score_seqs(string & str1, string & str2);
 vector<string> string_tokenize(const string& str, const string& delimiters = " \t\n\r", bool skip_empty = true);
 
@@ -496,6 +499,7 @@ double test_a_protein2(string& protein_name, double &ES){
    //Log<<"ES 0:"<<ES_protein<<endl;
    return ((double)p_count/p_times);
 }
+#ifdef INDEP_PROGRAM
 void random_check_blosum62(){
     int test_time = 10;
     while(test_time > 0){
@@ -520,6 +524,8 @@ void print_blosum62(){
     }
     cerr<<endl;
 }
+#else
+#endif
 int get_score_seqs(string & str1, string & str2){
     int score = 0;
     if(str1.size() != str2.size()){
