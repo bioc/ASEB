@@ -113,8 +113,8 @@ int main(int argc, char *argv[])
 void aseb_sites(string input1, string input2, string input3, string output, int Permuationtimes){
   int permutation_kind = 0;
   p_times = Permuationtimes;
-  for(int i=0; i < 25; i++){
-      for(int j=0; j < 25; j++){
+  for(int i=0; i < 24; i++){
+      for(int j=0; j < 24; j++){
           char tmp[10];
           sprintf(tmp, "%c_%c", acids[i], acids[j]);
           pair2score[tmp] = scores[i*24+j];
