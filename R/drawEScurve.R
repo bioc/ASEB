@@ -56,7 +56,7 @@ function(curveInfoDataFrame, sites=NULL, max_p_value=0.1, min_es=0.2, outputDir=
       lines(c(0,max_x),c(0,0),lty=2,col=8)
       lines(c(-1000,indexes[max_y_index+1]),c(max_y,max_y),lwd=1,lty=2)
       lines(c(indexes[max_y_index+1],indexes[max_y_index+1]),c(max(-0.7,max_y-0.7),min(max_y+0.7,0.7)),lwd=1,lty=2)
-      text(indexes[max_y_index+1]+0.05, max_y, max_y,pos=4)
+      text(as.numeric(indexes[max_y_index+1])+0.05, max_y, max_y,pos=4)
       
       for(j in (2:potins_num)){
           if(j%%2==1){
