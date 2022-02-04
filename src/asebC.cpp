@@ -419,7 +419,7 @@ string get_random_str(string &str1){
    for(int i = size/2+1; i < size; i++){
        indexes.push_back(i);
    }
-   random_shuffle(indexes.begin(), indexes.end()); 2022/01/27
+   random_shuffle(indexes.begin(), indexes.end()); //2022/01/27
    //std::random_device rd;
    //std::mt19937 g(rd());
    //std::shuffle(indexes.begin(), indexes.end(), g);
