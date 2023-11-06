@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <stdlib.h>
+#include <random>
 
 #ifdef INDEP_PROGRAM
 #define PRINTFUNCTION printf
