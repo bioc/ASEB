@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <stdlib.h>
+#include <random>
 
 #ifdef INDEP_PROGRAM
 #define PRINTFUNCTION printf
@@ -419,11 +420,16 @@ string get_random_str(string &str1){
    for(int i = size/2+1; i < size; i++){
        indexes.push_back(i);
    }
-   random_shuffle(indexes.begin(), indexes.end());  // 2022/01/27
+   //random_shuffle(indexes.begin(), indexes.end());  // 2022/01/27
    //std::random_device rd;
    //std::mt19937 g(rd());
    //std::shuffle(indexes.begin(), indexes.end(), g);
-   //2022/01/27   
+   //2022/01/27
+   //
+   //2023/11/02
+   std::random_device rd;
+   std::shuffle(indexes.begin(), indexes.end(), std::default_random_engine(rd()));
+   //2023/11/02
    for(int i=0; i < size/2; i++){
        rand_str[i] = str1[indexes[i]];
        //cerr<<i<<" "<<indexes[i]<<endl;
